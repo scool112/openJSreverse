@@ -1,0 +1,18 @@
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# IDE / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 运行时重新生成 / 下载的产物（每次运行会覆盖，无需提交）
+Project14/gdtv/js/sig.json
+Project30/delta/jscode/jscode.js
