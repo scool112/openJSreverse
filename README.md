@@ -1,6 +1,6 @@
 # 新手小白的 JS 逆向实战合集（30 例）
 
-一个 Web/小程序 JavaScript 逆向与协议还原的实战案例合集，涵盖：请求参数签名（MD5 / HMAC / RSA / 国密 SM2·SM4）、响应解密、Cookie 反爬、JSVMP、WASM、字体反爬、滑块 / 文字点选验证码、Akamai / 瑞数等风控。
+一个 新手小白可以练习的 Web/小程序 JavaScript 逆向与协议还原的实战案例合集，涵盖：请求参数签名（MD5 / HMAC / RSA / 国密 SM2·SM4）、响应解密、Cookie 反爬、JSVMP、WASM、字体反爬、滑块 / 文字点选验证码、Akamai / 瑞数等风控。
 
 每个案例都包含「Python 采集脚本 + 逆向出来的 JS 代码」，可直接对照阅读逆向过程。
 
@@ -164,8 +164,7 @@ openJSreverse/
 - 逆向点：Cookie（**瑞数 VMP**，`NOh8RTWx6K2dT` / `NOh8RTWx6K2dS` / `.AspNetCore.Antiforgery.*` / `WEB`）
 - 当前进度：
   - `chng/spider.py`：配合 `sdenv` 补环境执行 VMP 拿 Cookie、组装分段请求（分 P1/P2/P3 阶段）。
-  - `chng2/run_cnipa.py`：改用 **miniblink（`mb132_x64.dll`）** 加载真实页面 + 模拟鼠标轨迹点击翻页，尝试绕过瑞数。
-- 状态：**挑战/翻页未稳定通过，未拿到最终数据**。详见 `Project20/chng2/run_cnipa.py`。
+- 状态：**挑战/翻页未稳定通过，未拿到最终数据**。
 
 ### Project21 网易易盾 滑块验证码（两套实现）
 - 站点：`https://dun.163.com/trial/jigsaw` ｜ 接口：`https://c.dun.163.com/api/v3/get`、`/api/v3/check`
@@ -216,7 +215,7 @@ openJSreverse/
 ### Project29 赢商大数据
 - 站点：`http://www.winshangdata.com/` ｜ 接口：`.../wsapi/brand/getBigdataList3_4`、`.../getBigdataBrandExpandDemand`
 - 逆向点：无（接口直取，但需登录态 `uid`）
-- 思路：带上登录 Cookie/Header 直取；`winshangdata/` 是一个 scrapy 版本实现。
+- 思路：带上登录 Cookie/Header 直取；项目以 `winshangdata/`（Scrapy 项目）实现。
 - 登录 Cookie（`winfanguser`/`eyeuser`，内含 uid 与密码 MD5）与 `uid` **已脱敏**。
 
 ### Project30 达美航空（Delta）—— ⚠️ 未完成
@@ -293,9 +292,8 @@ openJSreverse/
    - 再手动补 RapidOCR 的轻依赖 `pyclipper Shapely PyYAML six`。
    - 装机提示：RapidOCR 一定用 `--no-deps`，避免被拉进 torch 等重依赖。
 7. **爬虫框架**（`Project29/winshangdata`）：`Scrapy`，`pip install scrapy`。
-8. **miniblink DLL**（`Project20/chng2`）：`mb132_x64.dll`，需自行准备并放到脚本头部 `DLL_PATH` 期望的目录。
-9. **Akamai helper**（`Project30`）：`akamai-v3-sensor-data-helper`，需自行准备。
-10. **各站点账号凭据**：见上一节「脱敏说明」，凡 `"你的xxx"` 处都要填你自己的 Cookie / 账号 / 密码 / token。
+8. **Akamai helper**（`Project30`）：`akamai-v3-sensor-data-helper`，需自行准备。
+9. **各站点账号凭据**：见上一节「脱敏说明」，凡 `"你的xxx"` 处都要填你自己的 Cookie / 账号 / 密码 / token。
 
 ---
 
@@ -303,7 +301,7 @@ openJSreverse/
 
 | 项目 | 站点 | 卡点 |
 |---|---|---|
-| **Project20** | 中国专利公布公告 `epub.cnipa.gov.cn` | 瑞数 VMP / 翻页挑战未稳定通过（`sdenv` 方案与 `miniblink` 方案都未拿到最终数据） |
+| **Project20** | 中国专利公布公告 `epub.cnipa.gov.cn` | 瑞数 VMP / 翻页挑战未稳定通过（`sdenv` 方案未拿到最终数据） |
 | **Project23** | 盼之代售 `pzds.com` | 登录态 `token` + WAF 风控未打通，未稳定取到商品数据 |
 | **Project30** | 达美航空 `delta.com` | Akamai `_abck` 校验未稳定通过 |
 

@@ -1,18 +1,60 @@
-# Python 缓存
+# ================= Python =================
 __pycache__/
 *.py[cod]
 *.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
 
-# Node
+# ================= Node =================
 node_modules/
 npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
 
-# IDE / 系统
+# ================= IDE / OS =================
 .idea/
 .vscode/
+*.iml
+*.suo
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# 运行时重新生成 / 下载的产物（每次运行会覆盖，无需提交）
+# ================= 本地敏感配置（不要提交） =================
+.env
+.env.*
+*.local
+secrets.*
+*_secret.*
+credentials.*
+config.local.*
+# 个人的站点 cookie / token 缓存
+*cookies*.json
+*tokens*.json
+
+# ================= 运行时产物（每次运行会重新生成 / 下载，无需提交） ==========
+# 签名 / 参数输出
 Project14/gdtv/js/sig.json
 Project30/delta/jscode/jscode.js
+# 验证码图片（每次抓取会覆盖）
+Project21/dun/image/
+Project21/dun2/picture/
+Project22/dun/image/
+# 采集结果 / 保存的响应
+data/
+result*.json
+Project19/chng/spider/res*.html
+Project20/chng2/*.html
+
+# ================= 日志 / 临时文件 =================
+*.log
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*~
